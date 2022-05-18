@@ -20,25 +20,25 @@ function splitSentence(stringExterna) {
   return arrayTeste;
 }
 
-// // Desafio 4
-// function concatName(nome) {
-//   let ultimoNome = nome.length-1;
+// Desafio 4
+function concatName(nome) {
+  
+  let nomes = [];
+  nomes = nome[nome.length-1] + ", " + nome[0];
 
-//   console.log(ultimoNome)
-
-//   return ultimoNome, primeiroNome;
-// }
+  return nomes;
+}
 
 // Desafio 5
 function footballPoints(wins, ties) {
 
   let pontosTotais = (wins *3) + (ties * 1);
-  
+
   return pontosTotais;
 }
 
 // Desafio 6
-function highestCount() {
+function highestCount(maiorNumero) {
   // seu código aqui
 }
 
