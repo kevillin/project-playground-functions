@@ -20,14 +20,21 @@ function splitSentence(stringExterna) {
   return arrayTeste;
 }
 
-// Desafio 4
-function concatName() {
-  // seu código aqui
-}
+// // Desafio 4
+// function concatName(nome) {
+//   let ultimoNome = nome.length-1;
+
+//   console.log(ultimoNome)
+
+//   return ultimoNome, primeiroNome;
+// }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+
+  let pontosTotais = (wins *3) + (ties * 1);
+  
+  return pontosTotais;
 }
 
 // Desafio 6
