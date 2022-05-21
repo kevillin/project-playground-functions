@@ -14,37 +14,73 @@ function calcArea(base, height) {
 }
 
 // Desafio 3
-function splitSentence(stringExterna) {
-  let arrayTeste = stringExterna.split(" ");
+function splitSentence(frase) {
 
-  return arrayTeste;
+  return frase.split(" ");
 }
 
 // Desafio 4
-function concatName(nome) {
+function concatName(listaNomes) {
   
   let nomes = [];
-  nomes = nome[nome.length-1] + ", " + nome[0];
+  nomes = listaNomes[listaNomes.length-1] + ", " + listaNomes[0];
 
   return nomes;
 }
 
 // Desafio 5
 function footballPoints(wins, ties) {
-
-  let pontosTotais = (wins *3) + (ties * 1);
+  let ganhou = 3;
+  let pontosTotais = (wins * ganhou) + (ties);
 
   return pontosTotais;
 }
 
-// Desafio 6
-function highestCount(maiorNumero) {
-  // seu código aqui
+// Desafio 6 - [1, 9, 2, 3, 9, 5, 7]
+function highestCount(listaNumeros) {
+  let maiorNumero = 0;
+  let menorNumero = 0;
+  let contador = 0;
+  let auxiliar = 0;
+
+  for(let i = 0; i < listaNumeros.length; i++){
+    menorNumero = i;
+    for(let j = i + 1; j < listaNumeros.length; j++){
+      if(listaNumeros[j] < listaNumeros[menorNumero]){
+        menorNumero = j;
+      }
+    }
+    if (menorNumero != i){
+      auxiliar = listaNumeros[menorNumero];
+      listaNumeros[menorNumero] = listaNumeros[i];
+      listaNumeros[i] = auxiliar;
+    }
+  }
+
+  maiorNumero = listaNumeros[listaNumeros.length-1];
+  for (let index = 0; index < listaNumeros.length; index++) {
+    if(listaNumeros[index] == maiorNumero){
+      contador += 1;
+    }
+    
+  }
+
+  return contador;
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  let mouseParaCat1 = cat1 - mouse;
+  let mouseParaCat11 = mouse - cat1;
+  let mouseParaCat2 = cat2 - mouse;
+  let mouseParaCat22 = mouse - cat2;
+  if(mouseParaCat1 < mouseParaCat2 && mouseParaCat11 > mouseParaCat22){
+    return "cat1";
+  } else if(mouseParaCat1 > mouseParaCat2 && mouseParaCat11 < mouseParaCat22){
+  return "cat2"
+  } else if (mouseParaCat1 == mouseParaCat2) {
+    return "os gatos trombam e o rato foge";
+  }
 }
 
 // Desafio 8
