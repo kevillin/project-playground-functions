@@ -112,27 +112,51 @@ function fizzBuzz(arrayNumeros) {
     }
   }
   return numeroParaPalavra;
-// acho que vai ser dois for aqui
 }
 
 // Desafio 9 - How are you today? || H4w 1r2 y45 t4d1y?
-function encode(fraseLetras) {
-  let letrasCodificadas = fraseLetras;
+function encode(frase) {
+  let encripty = [];
+  for(let index = 0; index < frase.length; index += 1){
+  let auxiliar = frase[index];
+  if(auxiliar === 'a'){
+    encripty += (frase[index].replace('a', '1'));
+  } else if (auxiliar === 'e'){
+    encripty += (frase[index].replace('e', '2'));
+  } else if (auxiliar === 'i'){
+    encripty += (frase[index].replace('i', '3'));
+  } else if (auxiliar === 'o'){
+    encripty += (frase[index].replace('o', '4'));
+  } else if (auxiliar === 'u'){
+    encripty += (frase[index].replace('u', '5'));
+  } else {
+    encripty += auxiliar;
+  }
+  }
+  return encripty;
+}
 
-  for(let index = 0; index < fraseLetras.length; index += 1)
-    if(fraseLetras[index] == String){
-      letrasCodificadas.push(fraseLetras.encode());
-    }
-    return letrasCodificadas;
-  } 
-function decode(fraseLetras) {
-  // let letrasDecodificadas = "";
-  // for(let index = 0; index > fraseLetras.length-1; index += 1)
-  //   if(fraseLetras[index] == Number){
-  //   letrasDecodificadas = fraseLetras.decode(fraseLetras[index]);
-  //   return letrasDecodificadas
-  // }
-} 
+function decode(frase) {
+  let encripty = [];
+  for(let index = 0; index < frase.length; index += 1){
+  let auxiliar = frase[index];
+  if(auxiliar === '1'){
+    encripty += (frase[index].replace('1', 'a'));
+  } else if (auxiliar === '2'){
+    encripty += (frase[index].replace('2', 'e'));
+  } else if (auxiliar === '3'){
+    encripty += (frase[index].replace('3', 'i'));
+  } else if (auxiliar === '4'){
+    encripty += (frase[index].replace('4', 'o'));
+  } else if (auxiliar === '5'){
+    encripty += (frase[index].replace('5', 'u'));
+  } else {
+    encripty += auxiliar;
+  }
+  }
+  return encripty;
+}
+
 
 // Desafio 10
 function techList(nomeTecnologia, nomePessoa) {
