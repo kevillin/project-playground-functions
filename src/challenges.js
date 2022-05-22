@@ -159,8 +159,21 @@ function decode(frase) {
 
 
 // Desafio 10
-function techList(nomeTecnologia, nomePessoa) {
-  // seu código aqui
+function techList(tech, name) {
+  let concatTechName = [];
+  
+  if(tech.length == 0){
+    return "Vazio!";
+} 
+  tech.sort();
+
+  for(index = 0; index < tech.length; index += 1){
+      concatTechName.push({
+        tech:tech[index],
+        name:name
+      });
+  }
+  return concatTechName;
 }
 
 module.exports = {
