@@ -161,7 +161,7 @@ function decode(frase) {
 // Desafio 10
 function techList(tech, name) {
   let concatTechName = [];
-  
+
   if(tech.length == 0){
     return "Vazio!";
 } 
@@ -187,4 +187,5 @@ module.exports = {
   footballPoints,
   highestCount,
   splitSentence,
-  techList,};
+  techList,
+};
