@@ -25,6 +25,7 @@ function generatePhoneNumber(phoneNumber) {
     correctNumber = "("+ phoneNumber[0] + phoneNumber[1] +") "+ phoneNumber[2] + phoneNumber[3] + phoneNumber[4] + phoneNumber[5] + phoneNumber[6]+ "-" + phoneNumber[7] + phoneNumber[8] + phoneNumber[9] + phoneNumber[10];
   return correctNumber;
 }
+generatePhoneNumber([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5])
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
@@ -40,8 +41,23 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(stringRecebida) {
+ let numeros = /\d+/g;
+ let resultado1 = stringRecebida.match(numeros);
+ let numerosSomados = 0;
+ 
+ for(let index = 0; index < resultado1.length; index += 1){
+  if(resultado1.length >= 1){
+    let numerosParaString = parseInt(resultado1[index]) 
+    numerosSomados += numerosParaString;
+  }
+ }
+  if (resultado1.length == 1) {
+    return numerosSomados + " copo de água";
+  } else {
+    return numerosSomados + " copos de água";
+  }
+
 }
 
 module.exports = {
