@@ -36,35 +36,23 @@ function footballPoints(wins, ties) {
   return pontosTotais;
 } //refatorado
 
-// Desafio 6 - [1, 9, 2, 3, 9, 5, 7]
+// Desafio 6 - Refatorado
 function highestCount(listaNumeros) {
-  let maiorNumero = 0;
-  let menorNumero = 0;
-  let contador = 0;
-  let auxiliar = 0;
+  let listaOrdenada = listaNumeros.sort();
+  let maiorNumero = listaNumeros[0];
 
-  for(let i = 0; i < listaNumeros.length; i += 1){
-    menorNumero = i;
-    for(let j = i + 1; j < listaNumeros.length; j++){
-      if(listaNumeros[j] < listaNumeros[menorNumero]){
-        menorNumero = j;
-      }
-    }
-    if (menorNumero != i){
-      auxiliar = listaNumeros[menorNumero];
-      listaNumeros[menorNumero] = listaNumeros[i];
-      listaNumeros[i] = auxiliar;
+  let contador = 0;
+
+  for (let index = 0; index < listaOrdenada.length; index += 1){
+    if(listaOrdenada[index] > maiorNumero){
+      maiorNumero = listaOrdenada[index]
     }
   }
-
-  maiorNumero = listaNumeros[listaNumeros.length-1];
-  for (let index = 0; index <= listaNumeros.length-1; index += 1) {
-    if(listaNumeros[index] === maiorNumero){
+  for(let indexInterno = 0; indexInterno < listaOrdenada.length; indexInterno += 1){
+    if(maiorNumero === listaNumeros[indexInterno]){
       contador += 1;
     }
-    
   }
-
   return contador;
 }
 
